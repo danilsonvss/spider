@@ -1,0 +1,34 @@
+# Binários compilados
+spider
+
+# Arquivos temporários gerados pelo shc durante a compilação
+*.x.c 
+
+# Arquivos de log
+*.log
+
+# Diretórios de testes e resultados de PHPUnit
+tests/output/
+phpunit.xml
+phpunit.xml.dist
+
+# Configurações e arquivos locais
+*.env
+.env.*
+.env.local
+
+# Diretórios específicos de sistema
+.DS_Store
+Thumbs.db
+
+# Diretório de dependências (exemplo para Composer ou outro gerenciador de pacotes)
+vendor/
+
+# Arquivos temporários
+*.swp
+*.tmp
+*~
+
+# Arquivos de cache e histórico
+.cache/
+.history/
