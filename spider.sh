@@ -27,12 +27,18 @@ if [ -z "$1" ]; then
 fi
 
 # Extrai o nome do arquivo sem a extensão e o caminho
-filename=$(basename -- "$1")
+filepath="$1"
+filename=$(basename -- "$filepath")
 classname="${filename%.*}"
-testfile="tests/${classname}Test.php"
 
-# Cria o diretório tests caso não exista
-mkdir -p tests
+# Define o diretório onde o arquivo de teste será criado
+testdir="tests/$(dirname "$filepath")"
+
+# Cria o diretório se não existir
+mkdir -p "$testdir"
+
+# Define o caminho completo do arquivo de teste
+testfile="${testdir}/${classname}Test.php"
 
 # Cria o arquivo de teste com um template básico de PHPUnit
 cat <<EOT > "$testfile"
